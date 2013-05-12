@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="MonitorDashboardView">
+    <page>/pages/MonitorDashboard.jsf</page>
+  </view>
+  <view id="NodeStatisticsView">
+    <page>/pages/NodeStatistics.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>MonitorDashboardView</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>node_statistics</from-outcome>
+      <to-activity-id>NodeStatisticsView</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>dashboard</from-outcome>
+      <to-activity-id>MonitorDashboardView</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
