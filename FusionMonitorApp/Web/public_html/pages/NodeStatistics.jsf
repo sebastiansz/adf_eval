@@ -7,6 +7,7 @@
                 <af:outputText value="Node Statistics View" id="ot1"/>
             </h2>
             <af:commandButton text="Cancel" id="cb1" action="dashboard"/>
+            <af:inputText label="Label 111" id="it1" value="#{managedBean1.nodeName}"/>
         </af:form>
     </af:document>
 </f:view>

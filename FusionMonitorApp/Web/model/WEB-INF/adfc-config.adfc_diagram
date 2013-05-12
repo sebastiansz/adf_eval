@@ -47,7 +47,7 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">175.54688</property>
+         name="y">176.0625</property>
       <property
          name="x">71.0</property>
    </WildcardControlFlowRule>
@@ -59,6 +59,6 @@
       <property
          name="fromOutcome">dashboard</property>
       <property
-         name="sdm:polyPoints">R50,107.0,175.54688,268.0,178.04688,L50</property>
+         name="sdm:polyPoints">R50,107.0,176.57812,268.0,178.04688,L50</property>
    </ControlFlowCase>
 </SDM>

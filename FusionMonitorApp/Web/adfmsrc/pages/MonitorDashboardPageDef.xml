@@ -4,16 +4,18 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <methodIterator Binds="findAllNodeStatistics.result" DataControl="MonitorController" RangeSize="25"
-                    BeanClass="fusion.monitor.model.beans.NodeStatisticsBean" id="findAllNodeStatisticsIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="MonitorController" id="MonitorControllerIterator"/>
+    <accessorIterator MasterBinding="MonitorControllerIterator" Binds="allNodeStatistics" RangeSize="25"
+                      DataControl="MonitorController" BeanClass="fusion.monitor.model.beans.NodeStatisticsBean"
+                      id="allNodeStatisticsIterator"/>
   </executables>
   <bindings>
     <methodAction id="findAllNodeStatistics" RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="findAllNodeStatistics" IsViewObjectMethod="false" DataControl="MonitorController"
                   InstanceName="data.MonitorController.dataProvider"
                   ReturnName="data.MonitorController.methodResults.findAllNodeStatistics_MonitorController_dataProvider_findAllNodeStatistics_result"/>
-    <tree IterBinding="findAllNodeStatisticsIterator" id="NodeStatisticsBean">
-      <nodeDefinition DefName="fusion.monitor.model.beans.NodeStatisticsBean" Name="NodeStatisticsBean0">
+    <tree IterBinding="allNodeStatisticsIterator" id="allNodeStatistics">
+      <nodeDefinition DefName="fusion.monitor.model.beans.NodeStatisticsBean" Name="allNodeStatistics0">
         <AttrNames>
           <Item Value="nodeName"/>
           <Item Value="sessionsCurrent"/>

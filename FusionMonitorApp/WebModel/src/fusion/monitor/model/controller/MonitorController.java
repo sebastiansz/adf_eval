@@ -14,7 +14,7 @@ public class MonitorController {
     }
 
 
-    public List<NodeStatisticsBean> findAllNodeStatistics() {
+    public List<NodeStatisticsBean> getAllNodeStatistics() {
         List<NodeStatisticsBean> pResult = new ArrayList<NodeStatisticsBean>();
         int pListSize = new Random().nextInt(50);
         for (int i = 0; i < pListSize; i++) {
