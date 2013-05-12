@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">MonitorDashboardView</property>
+      <property
+         name="page">/pages/MonitorDashboard.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>MonitorDashboardView&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">178.03125</property>
+      <property
+         name="x">309.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">NodeStatisticsView</property>
+      <property
+         name="page">/pages/NodeStatistics.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NodeStatisticsView&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">184.0625</property>
+      <property
+         name="x">654.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">node_statistics</property>
+      <property
+         name="sdm:polyPoints">R50,350.0,178.04688,613.0,184.07812,L50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule5">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">175.54688</property>
+      <property
+         name="x">71.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="WildcardControlFlowRule5"
+      to="View2">
+      <property
+         name="fromOutcome">dashboard</property>
+      <property
+         name="sdm:polyPoints">R50,107.0,175.54688,268.0,178.04688,L50</property>
+   </ControlFlowCase>
+</SDM>

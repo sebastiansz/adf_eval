@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="fusion.monitor.model">
+  <AdapterDataControl id="MonitorController" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="fusion.monitor.model.controller.MonitorController"
+                      BeanClass="fusion.monitor.model.controller.MonitorController"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="fusion.monitor.model.beans.NodeStatisticsBean"/>
+      <TypeInfo FullName="fusion.monitor.model.controller.MonitorController"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="fusion.monitor.model.controller.MonitorController"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

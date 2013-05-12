@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="MonitorDashboardPageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="findAllNodeStatistics.result" DataControl="MonitorController" RangeSize="25"
+                    BeanClass="fusion.monitor.model.beans.NodeStatisticsBean" id="findAllNodeStatisticsIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="findAllNodeStatistics" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="findAllNodeStatistics" IsViewObjectMethod="false" DataControl="MonitorController"
+                  InstanceName="data.MonitorController.dataProvider"
+                  ReturnName="data.MonitorController.methodResults.findAllNodeStatistics_MonitorController_dataProvider_findAllNodeStatistics_result"/>
+    <tree IterBinding="findAllNodeStatisticsIterator" id="NodeStatisticsBean">
+      <nodeDefinition DefName="fusion.monitor.model.beans.NodeStatisticsBean" Name="NodeStatisticsBean0">
+        <AttrNames>
+          <Item Value="nodeName"/>
+          <Item Value="sessionsCurrent"/>
+          <Item Value="sessionsInactive"/>
+          <Item Value="collectTime"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

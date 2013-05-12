@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="MonitorDashboard.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <h3 xmlns="http://www.w3.org/1999/xhtml">
+                <af:outputText value="Dashboard View" id="ot1"/>
+            </h3>
+            <af:commandButton text="Node statistics" id="cb1" action="node_statistics"/>
+       
+            <af:panelGroupLayout id="pgl1" layout="scroll">
+                <af:table value="#{bindings.NodeStatisticsBean.collectionModel}" var="row"
+                          rows="#{bindings.NodeStatisticsBean.rangeSize}"
+                          emptyText="#{bindings.NodeStatisticsBean.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.NodeStatisticsBean.rangeSize}" rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.NodeStatisticsBean.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.NodeStatisticsBean.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1" width="100%" columnStretching="blank">
+                    <af:column sortProperty="#{bindings.NodeStatisticsBean.hints.nodeName.name}" sortable="false"
+                               headerText="#{bindings.NodeStatisticsBean.hints.nodeName.label}" id="c1">
+                        <af:outputText value="#{row.nodeName}"
+                                       shortDesc="#{bindings.NodeStatisticsBean.hints.nodeName.tooltip}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.NodeStatisticsBean.hints.sessionsCurrent.name}" sortable="false"
+                               headerText="#{bindings.NodeStatisticsBean.hints.sessionsCurrent.label}" id="c2">
+                        <af:outputText value="#{row.sessionsCurrent}"
+                                       shortDesc="#{bindings.NodeStatisticsBean.hints.sessionsCurrent.tooltip}"
+                                       id="ot3">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.NodeStatisticsBean.hints.sessionsCurrent.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.NodeStatisticsBean.hints.sessionsInactive.name}"
+                               sortable="false" headerText="#{bindings.NodeStatisticsBean.hints.sessionsInactive.label}"
+                               id="c3">
+                        <af:outputText value="#{row.sessionsInactive}"
+                                       shortDesc="#{bindings.NodeStatisticsBean.hints.sessionsInactive.tooltip}"
+                                       id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.NodeStatisticsBean.hints.sessionsInactive.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.NodeStatisticsBean.hints.collectTime.name}" sortable="false"
+                               headerText="#{bindings.NodeStatisticsBean.hints.collectTime.label}" id="c4">
+                        <af:outputText value="#{row.collectTime}"
+                                       shortDesc="#{bindings.NodeStatisticsBean.hints.collectTime.tooltip}" id="ot5">
+                            <af:convertDateTime pattern="#{bindings.NodeStatisticsBean.hints.collectTime.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

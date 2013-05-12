@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="NodeStatistics.jsf" id="d1">
+        <af:form id="f1">
+            <h2 xmlns="http://www.w3.org/1999/xhtml">
+                <af:outputText value="Node Statistics View" id="ot1"/>
+            </h2>
+            <af:commandButton text="Cancel" id="cb1" action="dashboard"/>
+        </af:form>
+    </af:document>
+</f:view>

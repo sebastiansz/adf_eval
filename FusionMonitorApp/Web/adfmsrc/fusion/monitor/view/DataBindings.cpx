@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="fusion.monitor.view" ClientType="Generic">
+  <pageMap>
+    <page path="/pages/MonitorDashboard.jsf" usageId="fusion_monitor_view_MonitorDashboardPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="fusion_monitor_view_MonitorDashboardPageDef" path="pages.MonitorDashboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="MonitorController" path="fusion.monitor.model.MonitorController"/>
+  </dataControlUsages>
+</Application>
