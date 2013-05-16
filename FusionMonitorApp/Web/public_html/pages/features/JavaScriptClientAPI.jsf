@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="NodeStatistics.jsf" id="d1">
+        <af:resource type="javascript">
+          // js_displayCurrentTime
+          function js_displayCurrentTime(event) {
+              alert("Odświeżam statystyki");
+              var p_component = event.getSource();
+              var p_outputComponent = p_component.findComponent("otTime");
+              p_outputComponent.setValue(new Date());
+
+          }
+
+          // js_displayCurrentTime
+          function js_switchButton(event) {
+              var p_component = event.getSource();
+              var p_cbHideMe = p_component.findComponent("cbHideMe");
+              p_cbHideMe.setVisible(!p_cbHideMe.getVisible());
+          }
+        </af:resource>
+        <af:form id="f1">
+            <!-- LABELS -->
+            <h2 xmlns="http://www.w3.org/1999/xhtml">
+                <af:outputText id="ot1" value="JavaScript Client API" clientComponent="true"/>
+                <af:outputText id="otTime" value="" clientComponent="true"/>
+            </h2>
+            <!-- BUTTONS -->
+            
+            <af:commandButton text="Hide / Show" id="cb2" partialSubmit="true">
+                <af:clientListener method="js_switchButton" type="action"/>
+            </af:commandButton>
+            
+            <af:commandButton text="Set current Time" id="cb3" partialSubmit="true">
+                <af:clientListener method="js_displayCurrentTime" type="action"/>
+            </af:commandButton>
+
+            <af:commandButton text="HideMe" id="cbHideMe" clientComponent="true" visible="false"/>
+
+
+        </af:form>
+    </af:document>
+</f:view>
