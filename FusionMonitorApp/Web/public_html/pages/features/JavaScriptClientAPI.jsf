@@ -22,7 +22,7 @@
         <af:form id="f1">
             <!-- LABELS -->
             <h2 xmlns="http://www.w3.org/1999/xhtml">
-                <af:outputText id="ot1" value="JavaScript Client API" clientComponent="true"/>
+                <af:outputText id="ot1" value="ADF Faces - JavaScript Client API" clientComponent="true"/>
                 <af:outputText id="otTime" value="" clientComponent="true"/>
             </h2>
             <!-- BUTTONS -->

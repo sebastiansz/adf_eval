@@ -17,4 +17,20 @@
                        xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
     </Source>
   </AdapterDataControl>
+  <AdapterDataControl id="ProducerController" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="fusion.monitor.model.producer.ProducerController"
+                      BeanClass="fusion.monitor.model.producer.ProducerController"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="fusion.monitor.model.producer.ProducerBean"/>
+      <TypeInfo FullName="fusion.monitor.model.producer.ProducerController"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="fusion.monitor.model.producer.ProducerController"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
 </DataControlConfigs>
