@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">CreateProducer</property>
+      <property
+         name="page">/pages/producer/CreateProducer.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CreateProducer&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">0.630188</property>
+      <property
+         name="x">-726.66644</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule3">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-165.4479</property>
+      <property
+         name="x">-728.66644</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="WildcardControlFlowRule3"
+      to="View2">
+      <property
+         name="fromOutcome">create_producer</property>
+      <property
+         name="sdm:polyPoints">B50,-728.66644,-122.43228,-726.66644,-53.354187,T50</property>
+   </ControlFlowCase>
+</SDM>

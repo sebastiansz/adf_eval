@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource id="__6">/WEB-INF/adfc-config-producer.xml</metadata-resource>
   <view id="MonitorDashboardView">
     <page>/pages/MonitorDashboard.jsf</page>
   </view>

@@ -13,6 +13,10 @@ public class ProducerController {
 
     private ProducerSearchParametersBean modelProducerSearchParameters;
 
+    private ProducerBean modelCreateProducer;
+
+    private ProducerBean modelEditProducer;
+
 
     public ProducerController() {
         initializeModel();
@@ -21,12 +25,23 @@ public class ProducerController {
     private void initializeModel() {
     }
 
+
+    /**
+     *
+     */
+    public void actionInitCreateProducer() {
+
+        System.err.println("actionInitCreateProducer()");
+
+        modelCreateProducer = new ProducerBean();
+    }
+
     /**
      * Action actionFindProducers
      */
     public void actionAllProducers() {
 
-        System.out.println("actionAllProducers()");
+        System.err.println("actionAllProducers()");
 
         modelAllProducers = new ArrayList<ProducerBean>();
         Random pRandom = new Random();
@@ -52,7 +67,7 @@ public class ProducerController {
      */
     public void actionFindProducers() {
 
-        System.out.println("actionFindProducers(" + modelProducerSearchParameters + ")");
+        System.err.println("actionFindProducers(" + modelProducerSearchParameters + ")");
 
         modelFindProducers = new ArrayList<ProducerBean>();
         Random pRandom = new Random();
@@ -94,5 +109,22 @@ public class ProducerController {
 
     public ProducerSearchParametersBean getModelProducerSearchParameters() {
         return modelProducerSearchParameters;
+    }
+
+
+    public void setModelCreateProducer(ProducerBean modelCreateProducer) {
+        this.modelCreateProducer = modelCreateProducer;
+    }
+
+    public ProducerBean getModelCreateProducer() {
+        return modelCreateProducer;
+    }
+
+    public void setModelEditProducer(ProducerBean modelEditedProducer) {
+        this.modelEditProducer = modelEditedProducer;
+    }
+
+    public ProducerBean getModelEditProducer() {
+        return modelEditProducer;
     }
 }

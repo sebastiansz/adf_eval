@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="CreateProducerPageDef"
+                Package="pages.producer">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ProducerController" id="ProducerControllerIterator"/>
+    <accessorIterator MasterBinding="ProducerControllerIterator" Binds="modelCreateProducer" RangeSize="25"
+                      DataControl="ProducerController" BeanClass="fusion.monitor.model.producer.ProducerBean"
+                      id="modelCreateProducerIterator"/>
+    <invokeAction id="invoke_actionInitCreateProducer" Binds="actionInitCreateProducer"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="address">
+      <AttrNames>
+        <Item Value="address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="securityId">
+      <AttrNames>
+        <Item Value="securityId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="yearIncome">
+      <AttrNames>
+        <Item Value="yearIncome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="activityState">
+      <AttrNames>
+        <Item Value="activityState"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="registrationDate">
+      <AttrNames>
+        <Item Value="registrationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="startDate">
+      <AttrNames>
+        <Item Value="startDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="closeDate">
+      <AttrNames>
+        <Item Value="closeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="actionInitCreateProducer" InstanceName="data.ProducerController.dataProvider"
+                  DataControl="ProducerController" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="actionInitCreateProducer" IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

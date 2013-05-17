@@ -3,11 +3,14 @@
              SeparateXMLFiles="false" Package="fusion.monitor.view" ClientType="Generic">
   <pageMap>
     <page path="/pages/MonitorDashboard.jsf" usageId="fusion_monitor_view_MonitorDashboardPageDef"/>
+    <page path="/pages/producer/CreateProducer.jsf" usageId="fusion_monitor_view_CreateProducerPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="fusion_monitor_view_MonitorDashboardPageDef" path="pages.MonitorDashboardPageDef"/>
+    <page id="fusion_monitor_view_CreateProducerPageDef" path="pages.producer.CreateProducerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="ProducerController" path="fusion.monitor.model.ProducerController"/>
     <dc id="MonitorController" path="fusion.monitor.model.MonitorController"/>
   </dataControlUsages>
 </Application>
