@@ -22,8 +22,13 @@
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__5">
-    <managed-bean-name>managedBean1</managed-bean-name>
-    <managed-bean-class>fusion.monitor.model.beans.NodeStatisticsBean</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
+    <managed-bean-name>producerBean_pageFlow</managed-bean-name>
+    <managed-bean-class>fusion.monitor.model.producer.ProducerBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>producerController_pageFlow</managed-bean-name>
+    <managed-bean-class>fusion.monitor.model.producer.ProducerController</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
   </managed-bean>
 </adfc-config>

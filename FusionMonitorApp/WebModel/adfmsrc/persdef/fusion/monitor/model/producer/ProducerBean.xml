@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProducerBean">
+  <DesignTime>
+    <Attr Name="_DCName" Value="fusion.monitor.model.DataControls.ProducerController"/>
+    <Attr Name="_SDName" Value="fusion.monitor.model.producer.ProducerBean"/>
+  </DesignTime>
+</PDefViewObject>

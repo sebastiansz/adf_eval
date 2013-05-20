@@ -10,30 +10,35 @@
                     <f:facet name="menuBar"/>
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
-                            <af:commandToolbarButton text="Validate" id="ctb3"/>
+                            <af:commandToolbarButton text="Validate" id="ctb3"
+                                                     actionListener="#{bindings.validateSearchParameters.execute}"
+                                                     disabled="#{!bindings.validateSearchParameters.enabled}"
+                                                     immediate="true"/>
                             <af:commandToolbarButton text="Save" id="ctb1"/>
-                            <af:commandToolbarButton text="Cancel" id="ctb2"/>
+                            <af:commandToolbarButton text="Reset" id="ctb4" immediate="true"
+                                                     actionListener="#{bindings.validateSearchParameters.execute}"
+                                                     disabled="#{!bindings.validateSearchParameters.enabled}"
+                                                     action="#{pageFlowScope.producerController_pageFlow.actionInitCreateProducer}"/>
+                            <af:commandToolbarButton text="Cancel" id="ctb2" immediate="true"/>
                         </af:toolbar>
                     </f:facet>
                     <f:facet name="legend"/>
                     <f:facet name="info"/>
                     <af:panelFormLayout id="pfl1">
                         <af:inputText value="#{bindings.name.inputValue}" label="#{bindings.name.hints.label}"
-                                      required="#{bindings.name.hints.mandatory}"
-                                      columns="#{bindings.name.hints.displayWidth}"
+                                      required="true" columns="#{bindings.name.hints.displayWidth}"
                                       maximumLength="#{bindings.name.hints.precision}"
                                       shortDesc="#{bindings.name.hints.tooltip}" id="it1">
                             <f:validator binding="#{bindings.name.validator}"/>
                         </af:inputText>
                         <af:inputText value="#{bindings.email.inputValue}" label="#{bindings.email.hints.label}"
-                                      required="#{bindings.email.hints.mandatory}"
-                                      columns="#{bindings.email.hints.displayWidth}"
+                                      required="true" columns="#{bindings.email.hints.displayWidth}"
                                       maximumLength="#{bindings.email.hints.precision}"
                                       shortDesc="#{bindings.email.hints.tooltip}" id="it2">
                             <f:validator binding="#{bindings.email.validator}"/>
                         </af:inputText>
                         <af:inputText value="#{bindings.address.inputValue}" label="#{bindings.address.hints.label}"
-                                      required="#{bindings.address.hints.mandatory}"
+                                      required="true"
                                       columns="#{bindings.address.hints.displayWidth}"
                                       maximumLength="#{bindings.address.hints.precision}"
                                       shortDesc="#{bindings.address.hints.tooltip}" id="it3">

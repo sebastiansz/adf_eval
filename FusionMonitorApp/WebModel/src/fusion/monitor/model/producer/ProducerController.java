@@ -23,17 +23,26 @@ public class ProducerController {
     }
 
     private void initializeModel() {
+        actionInitCreateProducer();
     }
 
 
     /**
      *
      */
-    public void actionInitCreateProducer() {
-
+    public String actionInitCreateProducer() {
         System.err.println("actionInitCreateProducer()");
-
         modelCreateProducer = new ProducerBean();
+        return null;
+    }
+
+    /**
+     *validateSearchParameters
+     * @return
+     */
+    public String validateSearchParameters() {
+        System.err.println("validateSearchParameters()");
+        return null;
     }
 
     /**

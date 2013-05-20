@@ -4,10 +4,12 @@
   <pageMap>
     <page path="/pages/MonitorDashboard.jsf" usageId="fusion_monitor_view_MonitorDashboardPageDef"/>
     <page path="/pages/producer/CreateProducer.jsf" usageId="fusion_monitor_view_CreateProducerPageDef"/>
+    <page path="/pages/producer/SearchProducers.jsf" usageId="fusion_monitor_view_SearchProducersPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="fusion_monitor_view_MonitorDashboardPageDef" path="pages.MonitorDashboardPageDef"/>
     <page id="fusion_monitor_view_CreateProducerPageDef" path="pages.producer.CreateProducerPageDef"/>
+    <page id="fusion_monitor_view_SearchProducersPageDef" path="pages.producer.SearchProducersPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="ProducerController" path="fusion.monitor.model.ProducerController"/>

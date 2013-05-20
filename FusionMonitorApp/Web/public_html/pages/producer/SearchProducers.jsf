@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="SearchProducers.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGroupLayout id="pgl1" layout="scroll">
+                <af:panelHeader text="Search for producers" id="ph1">
+                    <f:facet name="context"/>
+                    <f:facet name="menuBar"/>
+                    <f:facet name="toolbar">
+                        <af:commandToolbarButton text="Cancel" id="ctb1"/>
+                    </f:facet>
+                    <f:facet name="legend"/>
+                    <f:facet name="info"/>
+                    <af:panelFormLayout id="pfl1" maxColumns="3">
+                        <af:inputText label="#{bindings.name.hints.label}" id="it1" value="#{bindings.name.inputValue}"
+                                      immediate="true" required="#{bindings.name.hints.mandatory}"
+                                      columns="#{bindings.name.hints.displayWidth}"
+                                      maximumLength="#{bindings.name.hints.precision}">
+                            <f:validator binding="#{bindings.name.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer"/>
+                        <af:commandButton text="Search" id="cb1" immediate="true"
+                                          actionListener="#{bindings.actionFindProducers.execute}"
+                                          disabled="#{!bindings.actionFindProducers.enabled}"/>
+                    </af:panelFormLayout>
+                </af:panelHeader>
+                <af:panelHeader text="Create producer" id="ph2">
+                    <f:facet name="context"/>
+                    <f:facet name="menuBar"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="legend"/>
+                    <f:facet name="info"/>
+                    <af:panelFormLayout id="pfl2">
+                        <f:facet name="footer"/>
+                        <af:inputText label="#{bindings.name1.hints.label}" id="it2"
+                                      value="#{bindings.name1.inputValue}" required="#{bindings.name1.hints.mandatory}"
+                                      columns="#{bindings.name1.hints.displayWidth}"
+                                      maximumLength="#{bindings.name1.hints.precision}">
+                            <f:validator binding="#{bindings.name1.validator}"/>
+                        </af:inputText>
+                        <af:commandButton text="Save" id="cb2"/>
+                    </af:panelFormLayout>
+                </af:panelHeader>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

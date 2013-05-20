@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="SearchProducersPageDef"
+                Package="pages.producer">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ProducerController" id="ProducerControllerIterator"/>
+    <accessorIterator MasterBinding="ProducerControllerIterator" Binds="modelProducerSearchParameters" RangeSize="25"
+                      DataControl="ProducerController"
+                      BeanClass="fusion.monitor.model.producer.ProducerSearchParametersBean"
+                      id="modelProducerSearchParametersIterator"/>
+    <accessorIterator MasterBinding="ProducerControllerIterator" Binds="modelCreateProducer" RangeSize="25"
+                      DataControl="ProducerController" BeanClass="fusion.monitor.model.producer.ProducerBean"
+                      id="modelCreateProducerIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="actionFindProducers" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="actionFindProducers" IsViewObjectMethod="false" DataControl="ProducerController"
+                  InstanceName="data.ProducerController.dataProvider"/>
+    <attributeValues IterBinding="modelProducerSearchParametersIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelCreateProducerIterator" id="name1">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
