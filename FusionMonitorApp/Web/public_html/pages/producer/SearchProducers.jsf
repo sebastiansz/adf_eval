@@ -13,12 +13,25 @@
                     <f:facet name="legend"/>
                     <f:facet name="info"/>
                     <af:panelFormLayout id="pfl1" maxColumns="3">
-                        <af:inputText label="#{bindings.name.hints.label}" id="it1" value="#{bindings.name.inputValue}"
-                                      immediate="true" required="#{bindings.name.hints.mandatory}"
+                        <af:inputText label="#{bindings.name.hints.label}" id="it1"
+                                      value="#{bindings.name.inputValue}" immediate="false"
+                                      required="#{bindings.name.hints.mandatory}"
                                       columns="#{bindings.name.hints.displayWidth}"
                                       maximumLength="#{bindings.name.hints.precision}">
                             <f:validator binding="#{bindings.name.validator}"/>
                         </af:inputText>
+                        <af:inputDate label="#{bindings.startDate.hints.label}" id="id1"
+                                      value="#{bindings.startDate.inputValue}"
+                                      required="false" immediate="true">
+                            <f:validator binding="#{bindings.startDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.startDate.format}"/>
+                        </af:inputDate>
+                        <af:selectOneRadio label="#{bindings.local.label}" id="sor1"
+                                           value="#{bindings.local.inputValue}"
+                                           required="#{bindings.local.hints.mandatory}">
+                            <f:selectItems value="#{bindings.local.items}" id="si1"/>
+                            <f:selectItems value="B" id="si2"/>
+                        </af:selectOneRadio>
                         <f:facet name="footer"/>
                         <af:commandButton text="Search" id="cb1" immediate="true"
                                           actionListener="#{bindings.actionFindProducers.execute}"
@@ -34,12 +47,14 @@
                     <af:panelFormLayout id="pfl2">
                         <f:facet name="footer"/>
                         <af:inputText label="#{bindings.name1.hints.label}" id="it2"
-                                      value="#{bindings.name1.inputValue}" required="#{bindings.name1.hints.mandatory}"
+                                      value="#{bindings.name1.inputValue}" required="true"
                                       columns="#{bindings.name1.hints.displayWidth}"
                                       maximumLength="#{bindings.name1.hints.precision}">
                             <f:validator binding="#{bindings.name1.validator}"/>
                         </af:inputText>
-                        <af:commandButton text="Save" id="cb2"/>
+                        <af:commandButton text="Save producer" id="cb2"
+                                          actionListener="#{bindings.actionSaveProducer.execute}"
+                                          disabled="#{!bindings.actionSaveProducer.enabled}"/>
                     </af:panelFormLayout>
                 </af:panelHeader>
             </af:panelGroupLayout>

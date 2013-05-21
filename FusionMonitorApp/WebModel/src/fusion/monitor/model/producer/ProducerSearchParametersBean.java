@@ -24,6 +24,8 @@ public class ProducerSearchParametersBean extends AbstractBean {
 
     Date closeDate;
 
+    boolean local;
+
     public ProducerSearchParametersBean() {
     }
 
@@ -100,11 +102,20 @@ public class ProducerSearchParametersBean extends AbstractBean {
         return closeDate;
     }
 
-    @Override
-    public String toString() {
-        return "ProducerSearchParametersBean [name=" + name + ", email=" + email + ", address=" + address + ", securityId=" +
-            securityId + ", yearIncome=" + yearIncome + ", activityState=" + activityState + ", registrationDate=" +
-            registrationDate + ", startDate=" + startDate + ", closeDate=" + closeDate + "]";
+    public void setLocal(boolean local) {
+        this.local = local;
     }
 
+    public boolean isLocal() {
+        return local;
+    }
+
+
+    @Override
+    public String toString() {
+        return "ProducerSearchParametersBean [name=" + name + ", email=" + email + ", address=" + address +
+            ", securityId=" + securityId + ", yearIncome=" + yearIncome + ", activityState=" + activityState +
+            ", registrationDate=" + registrationDate + ", startDate=" + startDate + ", closeDate=" + closeDate +
+            ", local=" + local + "]";
+    }
 }

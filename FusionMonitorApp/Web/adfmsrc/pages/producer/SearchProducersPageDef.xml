@@ -5,27 +5,46 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="root" RangeSize="25" DataControl="ProducerController" id="ProducerControllerIterator"/>
-    <accessorIterator MasterBinding="ProducerControllerIterator" Binds="modelProducerSearchParameters" RangeSize="25"
-                      DataControl="ProducerController"
-                      BeanClass="fusion.monitor.model.producer.ProducerSearchParametersBean"
-                      id="modelProducerSearchParametersIterator"/>
     <accessorIterator MasterBinding="ProducerControllerIterator" Binds="modelCreateProducer" RangeSize="25"
                       DataControl="ProducerController" BeanClass="fusion.monitor.model.producer.ProducerBean"
                       id="modelCreateProducerIterator"/>
+    <accessorIterator MasterBinding="ProducerControllerIterator" Binds="modelSearchParameters" RangeSize="25"
+                      DataControl="ProducerController"
+                      BeanClass="fusion.monitor.model.producer.ProducerSearchParametersBean"
+                      id="modelSearchParametersIterator"/>
   </executables>
   <bindings>
     <methodAction id="actionFindProducers" RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="actionFindProducers" IsViewObjectMethod="false" DataControl="ProducerController"
                   InstanceName="data.ProducerController.dataProvider"/>
-    <attributeValues IterBinding="modelProducerSearchParametersIterator" id="name">
-      <AttrNames>
-        <Item Value="name"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="modelCreateProducerIterator" id="name1">
       <AttrNames>
         <Item Value="name"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="actionSaveProducer" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="actionSaveProducer" IsViewObjectMethod="false" DataControl="ProducerController"
+                  InstanceName="data.ProducerController.dataProvider"
+                  ReturnName="data.ProducerController.methodResults.actionSaveProducer_ProducerController_dataProvider_actionSaveProducer_result"/>
+    <attributeValues IterBinding="modelSearchParametersIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="modelSearchParametersIterator" id="startDate">
+      <AttrNames>
+        <Item Value="startDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="modelSearchParametersIterator" id="local" DTSupportsMRU="false" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="local"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="TAK"/>
+        <Item Value="NIE"/>
+      </ValueList>
+    </list>
   </bindings>
 </pageDefinition>

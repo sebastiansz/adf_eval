@@ -9,9 +9,9 @@ public class ProducerController {
 
     private List<ProducerBean> modelAllProducers;
 
-    private List<ProducerBean> modelFindProducers;
+    private List<ProducerBean> modelSearchResult;
 
-    private ProducerSearchParametersBean modelProducerSearchParameters;
+    private ProducerSearchParametersBean modelSearchParameters;
 
     private ProducerBean modelCreateProducer;
 
@@ -23,24 +23,43 @@ public class ProducerController {
     }
 
     private void initializeModel() {
-        actionInitCreateProducer();
+        actionInitModelCreateProducer();
+        actionInitModelProducerSearchParameters();
     }
 
 
     /**
      *
      */
-    public String actionInitCreateProducer() {
+    public String actionInitModelCreateProducer() {
         System.err.println("actionInitCreateProducer()");
         modelCreateProducer = new ProducerBean();
         return null;
     }
 
     /**
+     *
+     */
+    public String actionInitModelProducerSearchParameters() {
+        System.err.println("actionInitModelProducerSearchParameters()");
+        modelSearchParameters = new ProducerSearchParametersBean();
+        return null;
+    }
+
+    /**
+     *
+     */
+    public String actionSaveProducer() {
+        System.err.println("actionSaveProducer()");
+        return null;
+    }
+
+
+    /**
      *validateSearchParameters
      * @return
      */
-    public String validateSearchParameters() {
+    public String actionValidateSearchParameters() {
         System.err.println("validateSearchParameters()");
         return null;
     }
@@ -76,9 +95,9 @@ public class ProducerController {
      */
     public void actionFindProducers() {
 
-        System.err.println("actionFindProducers(" + modelProducerSearchParameters + ")");
+        System.err.println("actionFindProducers(" + modelSearchParameters + ")");
 
-        modelFindProducers = new ArrayList<ProducerBean>();
+        modelSearchResult = new ArrayList<ProducerBean>();
         Random pRandom = new Random();
         int pSize = pRandom.nextInt(50);
         for (int i = 0; i < pSize; i++) {
@@ -92,7 +111,7 @@ public class ProducerController {
             pProducer.setSecurityId("SN" + i);
             pProducer.setStartDate(new Date());
             pProducer.setYearIncome(pRandom.nextLong());
-            modelFindProducers.add(pProducer);
+            modelSearchResult.add(pProducer);
         }
     }
 
@@ -104,20 +123,20 @@ public class ProducerController {
         this.modelAllProducers = allProducersModel;
     }
 
-    public void setModelFindProducers(List<ProducerBean> findProducersModel) {
-        this.modelFindProducers = findProducersModel;
+    public void setModelSearchResult(List<ProducerBean> findProducersModel) {
+        this.modelSearchResult = findProducersModel;
     }
 
-    public List<ProducerBean> getModelFindProducers() {
-        return modelFindProducers;
+    public List<ProducerBean> getModelSearchResult() {
+        return modelSearchResult;
     }
 
-    public void setModelProducerSearchParameters(ProducerSearchParametersBean modelProducerSearchParameters) {
-        this.modelProducerSearchParameters = modelProducerSearchParameters;
+    public void setModelSearchParameters(ProducerSearchParametersBean modelProducerSearchParameters) {
+        this.modelSearchParameters = modelProducerSearchParameters;
     }
 
-    public ProducerSearchParametersBean getModelProducerSearchParameters() {
-        return modelProducerSearchParameters;
+    public ProducerSearchParametersBean getModelSearchParameters() {
+        return modelSearchParameters;
     }
 
 

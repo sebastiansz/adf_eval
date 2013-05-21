@@ -15,10 +15,9 @@
                                                      disabled="#{!bindings.validateSearchParameters.enabled}"
                                                      immediate="true"/>
                             <af:commandToolbarButton text="Save" id="ctb1"/>
-                            <af:commandToolbarButton text="Reset" id="ctb4" immediate="true"
-                                                     actionListener="#{bindings.validateSearchParameters.execute}"
-                                                     disabled="#{!bindings.validateSearchParameters.enabled}"
-                                                     action="#{pageFlowScope.producerController_pageFlow.actionInitCreateProducer}"/>
+                            <af:commandToolbarButton text="Reset" id="ctb4"
+                                                     disabled="#{!bindings.actionInitModelCreateProducer.enabled}"
+                                                     actionListener="#{bindings.actionInitModelCreateProducer.execute}"/>
                             <af:commandToolbarButton text="Cancel" id="ctb2" immediate="true"/>
                         </af:toolbar>
                     </f:facet>

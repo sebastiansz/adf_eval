@@ -63,5 +63,9 @@
                   MethodName="validateSearchParameters" IsViewObjectMethod="false" DataControl="ProducerController"
                   InstanceName="data.ProducerController.dataProvider"
                   ReturnName="data.ProducerController.methodResults.validateSearchParameters_ProducerController_dataProvider_validateSearchParameters_result"/>
+    <methodAction id="actionInitModelCreateProducer" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="actionInitModelCreateProducer" IsViewObjectMethod="false" DataControl="ProducerController"
+                  InstanceName="data.ProducerController.dataProvider"
+                  ReturnName="data.ProducerController.methodResults.actionInitModelCreateProducer_ProducerController_dataProvider_actionInitModelCreateProducer_result"/>
   </bindings>
 </pageDefinition>
